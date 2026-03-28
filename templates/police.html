@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>App!</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="/" class="logo">GOOGOLML</a>
+  <div class="header-right">
+    <a href="/">Home</a>
+    <a href="/map">Map</a>
+    <a href="/police" class="active">Police</a>
+    <a href="/visualization">Visualization</a>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="col-md-6 mx-auto jumbotron text-center">
+
+      <strong>Accident Severity Table</strong>
+
+      <div class="alert alert-warning mt-3">
+          <b>1 = FATAL</b><br>
+          <b>2 = SERIOUS</b><br>
+          <b>3 = SLIGHT</b>
+      </div>
+
+      <h3 class="mt-4">OUTPUT PREDICTED :</h3>
+
+      <!-- Dynamic Result -->
+      <div style="font-size:300%; font-weight:bold;" id="result">
+          {{ result }}
+      </div>
+
+      <h4 class="mt-4 text-success">Message Sent to Police</h4>
+
+      <hr>
+  </div>
+</div>
+
+
+<footer class="footer text-center mt-5 py-3">
+    <div class="container">
+        Copyright &copy; tracker.com
+    </div>
+</footer>
+
+</body>
+</html>
